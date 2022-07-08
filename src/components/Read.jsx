@@ -30,6 +30,17 @@ const Read = () => {
     console.log(data);
   };
 
+  const getData = () => axios
+      .get("https://62c5797d134fa108c253480f.mockapi.io/fakeData")
+      .then((res) => {
+        setAPIData(res.data);
+      });
+  const onDelete = (id) => {
+    axios.delete(`https://62c5797d134fa108c253480f.mockapi.io/fakeData/${id}`)
+    .then(() => {getData()})
+    
+  }
+
   return (
     <div className="read bg-yellow-300 p-4 w-3/4 ">
       <h5>Read</h5>
@@ -41,6 +52,7 @@ const Read = () => {
               <TableCell>Last Name</TableCell>
               <TableCell align="right">Checked</TableCell>
               <TableCell>Update</TableCell>
+              <TableCell>Delete</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
@@ -61,6 +73,16 @@ const Read = () => {
                     onClick={() => setData(data)}
                   >
                     Update
+                  </Button>
+                </TableCell>
+                <TableCell>
+                  <Button
+                    className="bg-stone-500"
+                    variant="contained"
+                    type="submit"
+                    onClick={() => onDelete(data.id)}
+                  >
+                    Delete
                   </Button>
                 </TableCell>
               </TableRow>

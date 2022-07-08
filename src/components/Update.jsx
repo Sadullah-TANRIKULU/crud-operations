@@ -25,7 +25,7 @@ const Update = () => {
   }
 
   return (
-    <div className="update bg-yellow-300 p-4">
+    <div className="update bg-yellow-300 p-4 w-3/4">
       <h5>Update</h5>
 
       <FormGroup className="flex flex-col gap-1">

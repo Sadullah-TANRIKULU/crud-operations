@@ -1,6 +1,5 @@
 import "./App.css";
 import Create from "./components/Create";
-import Delete from "./components/Delete";
 import Read from "./components/Read";
 import Update from "./components/Update";
 
@@ -11,7 +10,6 @@ function App() {
       <Create />
       <Read />
       <Update />
-      <Delete />
     </div>
   );
 }
